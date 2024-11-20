@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniPlytix")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44367bfcfc578298bd781eb5baf4fb1d9eb517f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniPlytix")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniPlytix")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -28,12 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            dataGridView1 = new DataGridView();
+            textBox1 = new TextBox();
+            BtnBuscar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(54, 243);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(737, 186);
+            dataGridView1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(54, 50);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(737, 23);
+            textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // BtnBuscar
+            // 
+            BtnBuscar.Location = new Point(704, 87);
+            BtnBuscar.Name = "BtnBuscar";
+            BtnBuscar.Size = new Size(86, 26);
+            BtnBuscar.TabIndex = 2;
+            BtnBuscar.Text = "Buscar";
+            BtnBuscar.UseVisualStyleBackColor = true;
+            BtnBuscar.Click += BtnBuscar_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(863, 578);
+            Controls.Add(BtnBuscar);
+            Controls.Add(textBox1);
+            Controls.Add(dataGridView1);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private DataGridView dataGridView1;
+        private TextBox textBox1;
+        private Button BtnBuscar;
     }
 }
