@@ -30,7 +30,8 @@
         {
             dataGridView1 = new DataGridView();
             textBox1 = new TextBox();
-            BtnBuscar = new Button();
+            BtnSelect = new Button();
+            Update = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -40,10 +41,10 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(54, 243);
+            dataGridView1.Location = new Point(54, 164);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(737, 186);
+            dataGridView1.Size = new Size(737, 359);
             dataGridView1.TabIndex = 0;
             // 
             // textBox1
@@ -54,22 +55,33 @@
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // BtnBuscar
+            // BtnSelect
             // 
-            BtnBuscar.Location = new Point(704, 87);
-            BtnBuscar.Name = "BtnBuscar";
-            BtnBuscar.Size = new Size(86, 26);
-            BtnBuscar.TabIndex = 2;
-            BtnBuscar.Text = "Buscar";
-            BtnBuscar.UseVisualStyleBackColor = true;
-            BtnBuscar.Click += BtnBuscar_Click;
+            BtnSelect.Location = new Point(484, 99);
+            BtnSelect.Name = "BtnSelect";
+            BtnSelect.Size = new Size(86, 26);
+            BtnSelect.TabIndex = 2;
+            BtnSelect.Text = "Select";
+            BtnSelect.UseVisualStyleBackColor = true;
+            BtnSelect.Click += BtnBuscar_Click;
+            // 
+            // Update
+            // 
+            Update.Location = new Point(595, 99);
+            Update.Name = "Update";
+            Update.Size = new Size(196, 26);
+            Update.TabIndex = 3;
+            Update.Text = "Update/Insert/Delete";
+            Update.UseVisualStyleBackColor = true;
+            Update.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(863, 578);
-            Controls.Add(BtnBuscar);
+            Controls.Add(Update);
+            Controls.Add(BtnSelect);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
             Name = "Form1";
@@ -83,6 +95,7 @@
 
         private DataGridView dataGridView1;
         private TextBox textBox1;
-        private Button BtnBuscar;
+        private Button BtnSelect;
+        private Button Update;
     }
 }
