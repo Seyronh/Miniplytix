@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ElRusitoFeliz\\source\\repos\\Miniplytix\\MiniPlytix\\MiniPlytix.csproj": {}
+    "C:\\Users\\ElRusitoFeliz\\Documents\\GitHub\\Miniplytix\\MiniPlytix.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ElRusitoFeliz\\source\\repos\\Miniplytix\\MiniPlytix\\MiniPlytix.csproj": {
+    "C:\\Users\\ElRusitoFeliz\\Documents\\GitHub\\Miniplytix\\MiniPlytix.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ElRusitoFeliz\\source\\repos\\Miniplytix\\MiniPlytix\\MiniPlytix.csproj",
+        "projectUniqueName": "C:\\Users\\ElRusitoFeliz\\Documents\\GitHub\\Miniplytix\\MiniPlytix.csproj",
         "projectName": "MiniPlytix",
-        "projectPath": "C:\\Users\\ElRusitoFeliz\\source\\repos\\Miniplytix\\MiniPlytix\\MiniPlytix.csproj",
+        "projectPath": "C:\\Users\\ElRusitoFeliz\\Documents\\GitHub\\Miniplytix\\MiniPlytix.csproj",
         "packagesPath": "C:\\Users\\ElRusitoFeliz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ElRusitoFeliz\\source\\repos\\Miniplytix\\MiniPlytix\\obj\\",
+        "outputPath": "C:\\Users\\ElRusitoFeliz\\Documents\\GitHub\\Miniplytix\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

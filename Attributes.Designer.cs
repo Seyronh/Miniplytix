@@ -1,6 +1,6 @@
 ﻿namespace MiniPlytix
 {
-    partial class Categories
+    partial class Attributes
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -37,12 +37,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(80, 61);
             label1.Name = "label1";
-            label1.Size = new Size(135, 32);
+            label1.Size = new Size(129, 32);
             label1.TabIndex = 0;
-            label1.Text = "Categories";
+            label1.Text = "Attributes";
             // 
             // dataGridView1
             // 
@@ -52,15 +51,15 @@
             dataGridView1.Size = new Size(400, 200);
             dataGridView1.TabIndex = 1;
             // 
-            // Categories
+            // Attributes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Name = "Categories";
+            Name = "Attributes";
             Size = new Size(793, 409);
-            Load += Categories_Load;
+            Load += Attributes_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

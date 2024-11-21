@@ -39,9 +39,9 @@ namespace MiniPlytix
             MostrarControlDeUsuario(new Categories());
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void attributesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MostrarControlDeUsuario(new Attributes());
         }
     }
 }

@@ -33,26 +33,28 @@
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(74, 47);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label1.Location = new Point(64, 31);
             label1.Name = "label1";
-            label1.Size = new Size(156, 15);
+            label1.Size = new Size(116, 32);
             label1.TabIndex = 0;
-            label1.Text = "Esta es la ventana productos";
+            label1.Text = "Products";
             // 
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dataGridView1.Location = new Point(64, 199);
+            dataGridView1.Location = new Point(64, 66);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(661, 150);
+            dataGridView1.Size = new Size(661, 265);
             dataGridView1.TabIndex = 1;
             // 
             // Column1
@@ -70,10 +72,21 @@
             Column3.HeaderText = "GTIN";
             Column3.Name = "Column3";
             // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.Location = new Point(630, 337);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Name = "Productos";
@@ -91,5 +104,6 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private Button button1;
     }
 }

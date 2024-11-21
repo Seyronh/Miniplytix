@@ -10,25 +10,25 @@ using System.Windows.Forms;
 
 namespace MiniPlytix
 {
-    public partial class Productos : UserControl
+    public partial class Attributes : UserControl
     {
-        public Productos()
+        public Attributes()
         {
             InitializeComponent();
         }
 
-        private void Productos_Load(object sender, EventArgs e)
+        private void Attributes_Load(object sender, EventArgs e)
         {
-            String consulta = "SELECT Name, SKU, GTIN FROM Producto";
+            String consulta = "SELECT TipoAtributo.nombre, Name  FROM Atributo JOIN TipoAtributo ON Atributo.idTipoAtributo = TipoAtributo.idTipoAtributo";
 
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
 
             List<object[]> listaConsulta = new Consulta().Select(consulta);
 
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Type" });
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Name" });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "SKU" });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "GTIN" });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Action" });
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 

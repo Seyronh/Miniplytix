@@ -39,40 +39,41 @@
             // panelContenedor
             // 
             panelContenedor.Dock = DockStyle.Fill;
-            panelContenedor.Location = new Point(0, 24);
+            panelContenedor.Location = new Point(0, 40);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(800, 426);
+            panelContenedor.Size = new Size(800, 410);
             panelContenedor.TabIndex = 0;
             // 
             // menuStrip1
             // 
+            menuStrip1.AutoSize = false;
             menuStrip1.Items.AddRange(new ToolStripItem[] { productsToolStripMenuItem, categoriesToolStripMenuItem, attributesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(800, 40);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // productsToolStripMenuItem
             // 
             productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            productsToolStripMenuItem.Size = new Size(66, 20);
+            productsToolStripMenuItem.Size = new Size(66, 36);
             productsToolStripMenuItem.Text = "Products";
             productsToolStripMenuItem.Click += productsToolStripMenuItem_Click;
             // 
             // categoriesToolStripMenuItem
             // 
             categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
-            categoriesToolStripMenuItem.Size = new Size(75, 20);
+            categoriesToolStripMenuItem.Size = new Size(75, 36);
             categoriesToolStripMenuItem.Text = "Categories";
             categoriesToolStripMenuItem.Click += categoriesToolStripMenuItem_Click;
             // 
             // attributesToolStripMenuItem
             // 
             attributesToolStripMenuItem.Name = "attributesToolStripMenuItem";
-            attributesToolStripMenuItem.Size = new Size(71, 20);
+            attributesToolStripMenuItem.Size = new Size(71, 36);
             attributesToolStripMenuItem.Text = "Attributes";
+            attributesToolStripMenuItem.Click += attributesToolStripMenuItem_Click;
             // 
             // FormularoPrincipal
             // 
@@ -87,7 +88,6 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
