@@ -1,6 +1,6 @@
 ﻿namespace MiniPlytix
 {
-    partial class menuCrearCategoria
+    partial class menuCategoria
     {
         /// <summary>
         /// Required designer variable.

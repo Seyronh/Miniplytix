@@ -36,7 +36,7 @@ namespace MiniPlytix
 
         private void button1_Click(object sender, EventArgs e)
         {
-            menuCrearCategoria crear = new menuCrearCategoria();
+            menuCategoria crear = new menuCategoria();
             crear.ShowDialog();
             if (crear.getNuevo().Length == 0) return;
             Consulta.conexion.Insert("INSERT INTO Categoria (Name) VALUE ('" + crear.getNuevo() + "')");
@@ -61,7 +61,7 @@ namespace MiniPlytix
             {
                 int rowIndex = e.RowIndex;
                 string nombreCategoria = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-                menuEditarCategoria cambiarnombre = new menuEditarCategoria(nombreCategoria);
+                menuCategoria cambiarnombre = new menuCategoria(nombreCategoria);
                 cambiarnombre.ShowDialog();
                 Consulta.conexion.Update("UPDATE Categoria SET Name='" + cambiarnombre.getNuevo() + "' WHERE Name='" + nombreCategoria + "'");
                 dataGridView1.Rows[rowIndex].Cells[0].Value = cambiarnombre.getNuevo();

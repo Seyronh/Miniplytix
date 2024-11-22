@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="menuCrearCategoria.cs">
+    <Compile Update="menuCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
