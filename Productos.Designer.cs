@@ -30,10 +30,12 @@
         {
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            button1 = new Button();
+            idProducto = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
-            button1 = new Button();
+            Column4 = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -51,11 +53,28 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idProducto, Column1, Column2, Column3, Column4 });
             dataGridView1.Location = new Point(64, 66);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(661, 265);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.Location = new Point(630, 337);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // idProducto
+            // 
+            idProducto.HeaderText = "";
+            idProducto.Name = "idProducto";
+            idProducto.Visible = false;
             // 
             // Column1
             // 
@@ -72,15 +91,13 @@
             Column3.HeaderText = "GTIN";
             Column3.Name = "Column3";
             // 
-            // button1
+            // Column4
             // 
-            button1.AutoSize = true;
-            button1.Location = new Point(630, 337);
-            button1.Name = "button1";
-            button1.Size = new Size(95, 33);
-            button1.TabIndex = 2;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
+            Column4.HeaderText = "";
+            Column4.Name = "Column4";
+            Column4.Text = "More info";
+            Column4.ToolTipText = "More info";
+            Column4.UseColumnTextForButtonValue = true;
             // 
             // Productos
             // 
@@ -101,9 +118,11 @@
 
         private Label label1;
         private DataGridView dataGridView1;
+        private Button button1;
+        private DataGridViewTextBoxColumn idProducto;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private Button button1;
+        private DataGridViewButtonColumn Column4;
     }
 }
