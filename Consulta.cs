@@ -12,7 +12,7 @@ namespace MiniPlytix
     internal class Consulta
     {
         private ConexionMySQL conexionMySQL;
-
+        public static Consulta conexion = new Consulta();
 
 
         public Consulta()
