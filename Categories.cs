@@ -24,7 +24,7 @@ namespace MiniPlytix
 
             dataGridView1.Rows.Clear();
 
-            List<object[]> listaConsulta = new Consulta().Select(consulta);
+            List<object[]> listaConsulta = Consulta.conexion.Select(consulta);
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -39,7 +39,7 @@ namespace MiniPlytix
             menuCrearCategoria crear = new menuCrearCategoria();
             crear.ShowDialog();
             if (crear.getNuevo().Length == 0) return;
-            new Consulta().Insert("INSERT INTO Categoria (Name) VALUE ('" + crear.getNuevo() + "')");
+            Consulta.conexion.Insert("INSERT INTO Categoria (Name) VALUE ('" + crear.getNuevo() + "')");
             dataGridView1.Rows.Add([crear.getNuevo(),0]);
         }
 
@@ -51,10 +51,10 @@ namespace MiniPlytix
             {
                 int rowIndex = e.RowIndex;
                 string nombreCategoria = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-                List<object[]> listaConsulta = new Consulta().Select("SELECT idCategoria FROM Categoria WHERE Name='"+nombreCategoria+"'");
+                List<object[]> listaConsulta = Consulta.conexion.Select("SELECT idCategoria FROM Categoria WHERE Name='"+nombreCategoria+"'");
                 int ID = Convert.ToInt32(listaConsulta[0][0]);
-                new Consulta().Delete("DELETE FROM Producto_Categoria WHERE Categoria_idCategoria =" + ID);
-                new Consulta().Delete("DELETE FROM Categoria WHERE Name='" + nombreCategoria+"'");
+                Consulta.conexion.Delete("DELETE FROM Producto_Categoria WHERE Categoria_idCategoria =" + ID);
+                Consulta.conexion.Delete("DELETE FROM Categoria WHERE Name='" + nombreCategoria+"'");
                 dataGridView1.Rows.RemoveAt(rowIndex);
             }
             if (e.ColumnIndex == 3) //EDITAR
@@ -63,7 +63,7 @@ namespace MiniPlytix
                 string nombreCategoria = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
                 menuEditarCategoria cambiarnombre = new menuEditarCategoria(nombreCategoria);
                 cambiarnombre.ShowDialog();
-                new Consulta().Update("UPDATE Categoria SET Name='" + cambiarnombre.getNuevo() + "' WHERE Name='" + nombreCategoria + "'");
+                Consulta.conexion.Update("UPDATE Categoria SET Name='" + cambiarnombre.getNuevo() + "' WHERE Name='" + nombreCategoria + "'");
                 dataGridView1.Rows[rowIndex].Cells[0].Value = cambiarnombre.getNuevo();
             }
         }
