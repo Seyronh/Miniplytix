@@ -18,4 +18,10 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="menuCrearCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
