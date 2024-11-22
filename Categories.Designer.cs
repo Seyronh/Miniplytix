@@ -33,6 +33,7 @@
             button1 = new Button();
             name = new DataGridViewTextBoxColumn();
             NProducts = new DataGridViewTextBoxColumn();
+            id = new DataGridViewTextBoxColumn();
             Delete = new DataGridViewButtonColumn();
             Edit = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -54,7 +55,7 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { name, NProducts, Delete, Edit });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { name, NProducts, id, Delete, Edit });
             dataGridView1.Location = new Point(80, 60);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(624, 247);
@@ -84,6 +85,12 @@
             NProducts.HeaderText = "# Products";
             NProducts.Name = "NProducts";
             NProducts.ReadOnly = true;
+            // 
+            // id
+            // 
+            id.HeaderText = "id";
+            id.Name = "id";
+            id.Visible = false;
             // 
             // Delete
             // 
@@ -129,6 +136,7 @@
         private Button button1;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn NProducts;
+        private DataGridViewTextBoxColumn id;
         private DataGridViewButtonColumn Delete;
         private DataGridViewButtonColumn Edit;
     }

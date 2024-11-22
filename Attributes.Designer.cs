@@ -34,6 +34,7 @@
             label2 = new Label();
             Tipo = new DataGridViewTextBoxColumn();
             name = new DataGridViewTextBoxColumn();
+            id = new DataGridViewTextBoxColumn();
             Delete = new DataGridViewButtonColumn();
             Edit = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -54,7 +55,7 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Tipo, name, Delete, Edit });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Tipo, name, id, Delete, Edit });
             dataGridView1.Location = new Point(80, 96);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(608, 200);
@@ -91,6 +92,12 @@
             name.HeaderText = "Name";
             name.Name = "name";
             name.ReadOnly = true;
+            // 
+            // id
+            // 
+            id.HeaderText = "id";
+            id.Name = "id";
+            id.Visible = false;
             // 
             // Delete
             // 
@@ -138,6 +145,7 @@
         private Label label2;
         private DataGridViewTextBoxColumn Tipo;
         private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn id;
         private DataGridViewButtonColumn Delete;
         private DataGridViewButtonColumn Edit;
     }

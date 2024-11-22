@@ -71,7 +71,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(187, 23);
             comboBox1.TabIndex = 3;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // textBox1
             // 

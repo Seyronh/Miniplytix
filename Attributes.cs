@@ -21,7 +21,7 @@ namespace MiniPlytix
 
         private void Attributes_Load(object sender, EventArgs e)
         {
-            String consulta = "SELECT TipoAtributo.nombre, Name  FROM Atributo JOIN TipoAtributo ON Atributo.idTipoAtributo = TipoAtributo.idTipoAtributo";
+            String consulta = "SELECT TipoAtributo.nombre, Name, idAtributo  FROM Atributo JOIN TipoAtributo ON Atributo.idTipoAtributo = TipoAtributo.idTipoAtributo";
 
             dataGridView1.Rows.Clear();
 
@@ -64,30 +64,30 @@ namespace MiniPlytix
         {
 
             if (e.RowIndex == -1) return; //Evitar pulsar titulos
-            if (e.ColumnIndex == 2) //BORRAR
+            if (e.ColumnIndex == 3) //BORRAR
             {
                 int rowIndex = e.RowIndex;
                 string nombreAtributo = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
-                List<object[]> listaConsulta = Consulta.conexion.Select("SELECT idAtributo FROM Atributo WHERE Name='" + nombreAtributo + "'");
-                int ID = Convert.ToInt32(listaConsulta[0][0]);
-                Consulta.conexion.Delete("DELETE FROM ValorAtributo WHERE idAtributo=" + ID);
-                Consulta.conexion.Delete("DELETE FROM Atributo WHERE Name='" + nombreAtributo + "'");
+                int idAtributo = int.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString());
+                Consulta.conexion.Delete("DELETE FROM ValorAtributo WHERE idAtributo=" + idAtributo);
+                Consulta.conexion.Delete("DELETE FROM Atributo WHERE idAtributo=" + idAtributo);
                 dataGridView1.Rows.RemoveAt(rowIndex);
                 ContadorAtributos--;
                 actualizarDisponibles();
             }
-            if (e.ColumnIndex == 3) //EDITAR
+            if (e.ColumnIndex == 4) //EDITAR
             {
                 int rowIndex = e.RowIndex;
                 string nombreAtributo = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
-                List<object[]> listaConsulta = Consulta.conexion.Select("SELECT idTipoAtributo FROM Atributo WHERE Name='" + nombreAtributo + "'");
+                int idAtributo = int.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString());
+                List<object[]> listaConsulta = Consulta.conexion.Select("SELECT idTipoAtributo FROM Atributo WHERE idAtributo=" + idAtributo);
                 int ID = Convert.ToInt32(listaConsulta[0][0]);
                 menuAtributo menu = new menuAtributo(nombreAtributo,ID);
                 menu.ShowDialog();
                 int NuevoTipo = menu.getTipo();
                 string NuevoNombre = menu.getNombre();
                 if (NuevoNombre.Length == 0 || NuevoTipo == 0) return;
-                Consulta.conexion.Update("UPDATE Atributo SET Name='" + NuevoNombre + "', idTipoAtributo=" + NuevoTipo+" WHERE Name='"+nombreAtributo+"'");
+                Consulta.conexion.Update("UPDATE Atributo SET Name='" + NuevoNombre + "', idTipoAtributo=" + NuevoTipo+" WHERE idAtributo="+idAtributo);
                 listaConsulta = Consulta.conexion.Select("SELECT nombre FROM TipoAtributo WHERE idTipoAtributo=" + NuevoTipo);
                 dataGridView1.Rows[rowIndex].Cells[0].Value = listaConsulta[0][0];
                 dataGridView1.Rows[rowIndex].Cells[1].Value = NuevoNombre;
