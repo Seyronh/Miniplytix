@@ -23,7 +23,7 @@ namespace MiniPlytix
         {
             InitializeComponent();
             Nombreactual = nombre;
-            selected = idTipo - 1;
+            selected = idTipo-1;
         }
 
         private void menuAtributo_Load(object sender, EventArgs e)
@@ -60,12 +60,8 @@ namespace MiniPlytix
                 return;
             }
             Nombreactual = textBox1.Text;
-            Close();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
             selected = comboBox1.SelectedIndex;
+            Close();
         }
     }
 }
