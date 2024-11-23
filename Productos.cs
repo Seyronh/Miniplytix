@@ -53,5 +53,26 @@ namespace MiniPlytix
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            menuCrearProducto crear = new menuCrearProducto();
+            crear.ShowDialog();
+            String consulta = "INSERT INTO Producto (Name, GTIN, SKU) VALUES ('" + crear.getName() + "', " + crear.getGTIN() + "," + crear.getSKU() + " )";
+            Consulta.conexion.Insert(consulta);
+            
+            consulta = "SELECT idProducto, Name, SKU, GTIN FROM Producto";
+
+            dataGridView1.Rows.Clear();
+
+            List<object[]> listaConsulta = new Consulta().Select(consulta);
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            for (int i = 0; i < listaConsulta.Count; i++)
+            {
+                dataGridView1.Rows.Add(listaConsulta[i]);
+            }
+        }
     }
 }

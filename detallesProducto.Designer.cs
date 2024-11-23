@@ -97,21 +97,23 @@
             // 
             // ButtonDelete
             // 
+            ButtonDelete.Font = new Font("Segoe UI", 11F);
             ButtonDelete.Location = new Point(610, 46);
             ButtonDelete.Name = "ButtonDelete";
             ButtonDelete.Size = new Size(121, 29);
             ButtonDelete.TabIndex = 6;
-            ButtonDelete.Text = "Delete product";
+            ButtonDelete.Text = "🗑️";
             ButtonDelete.UseVisualStyleBackColor = true;
             ButtonDelete.Click += button1_Click;
             // 
             // ButtonEdit
             // 
+            ButtonEdit.Font = new Font("Segoe UI", 11F);
             ButtonEdit.Location = new Point(610, 106);
             ButtonEdit.Name = "ButtonEdit";
             ButtonEdit.Size = new Size(121, 31);
             ButtonEdit.TabIndex = 7;
-            ButtonEdit.Text = "Edit product";
+            ButtonEdit.Text = "✏️";
             ButtonEdit.UseVisualStyleBackColor = true;
             ButtonEdit.Click += button2_Click;
             // 

@@ -30,12 +30,12 @@
         {
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            button1 = new Button();
             idProducto = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewButtonColumn();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -59,16 +59,6 @@
             dataGridView1.Size = new Size(661, 265);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // button1
-            // 
-            button1.AutoSize = true;
-            button1.Location = new Point(630, 337);
-            button1.Name = "button1";
-            button1.Size = new Size(95, 33);
-            button1.TabIndex = 2;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
             // 
             // idProducto
             // 
@@ -98,6 +88,17 @@
             Column4.Text = "More info";
             Column4.ToolTipText = "More info";
             Column4.UseColumnTextForButtonValue = true;
+            // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.Location = new Point(630, 337);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Productos
             // 

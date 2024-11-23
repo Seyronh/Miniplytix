@@ -7,28 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MiniPlytix
 {
-    public partial class menuEditarProducto : Form
+    public partial class menuCrearProducto : Form
     {
         private string newnombre = "";
         private int newSKU;
         private int newGTIN;
 
-        public menuEditarProducto(string name, int SKU, int GTIN)
+        public menuCrearProducto()
         {
             InitializeComponent();
-            NameTextBox.Text = name;
-            newnombre = name;
-            SKUTextBox.Text = SKU.ToString();
-            newSKU = SKU;
-            GTINTextBox.Text = GTIN.ToString();
-            newGTIN = GTIN;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (NameTextBox.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("The name can't be empty");
+                return;
+            }
+            else if (SKUTextBox.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("SKU can't be empty");
+                return;
+            }
+            else if (GTINTextBox.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("GTIN text can't be empty");
+                return;
+            }
+
             newnombre = NameTextBox.Text;
             newSKU = Convert.ToInt32(SKUTextBox.Text);
             newGTIN = Convert.ToInt32(GTINTextBox.Text);
