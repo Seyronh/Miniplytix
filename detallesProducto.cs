@@ -60,15 +60,13 @@ namespace MiniPlytix
         //Boton editar
         private void button2_Click(object sender, EventArgs e)
         {
-            menuProducto editarProducto = new menuProducto(nombre, SKU, GTIN);
+            menuProducto editarProducto = new menuProducto(productoId, nombre, SKU, GTIN);
             editarProducto.ShowDialog();
             Consulta.conexion.Update("UPDATE Producto SET Name= '" + editarProducto.getName() + "', SKU= " + editarProducto.getSKU() + ", GTIN= " + editarProducto.getGTIN() + " WHERE idProducto=" + productoId);
 
             Namelabel.Text = editarProducto.getName();
             SKUlabel.Text = editarProducto.getSKU().ToString();
             GTINlabel.Text = editarProducto.getGTIN().ToString();
-
-
         }
     }
 }
