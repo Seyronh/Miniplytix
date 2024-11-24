@@ -59,9 +59,12 @@ namespace MiniPlytix
             menuCrearProducto crear = new menuCrearProducto();
             crear.ShowDialog();
             if (crear.getName().Length == 0 || crear.getSKU() == 0 || crear.getGTIN() == 0) return;
-            String consulta = "INSERT INTO Producto (Name, GTIN, SKU) VALUES ('" + crear.getName() + "', " + crear.getGTIN() + "," + crear.getSKU() + " )";
+
+            DateTime fechaActual = DateTime.Now;
+
+            String consulta = "INSERT INTO Producto (Name, GTIN, SKU, FechaCreacion, FechaModificacion) VALUES ('" + crear.getName() + "', " + crear.getGTIN() + "," + crear.getSKU() + ",'" + fechaActual.ToString("yyyy-MM-dd HH:mm:ss") + "," + fechaActual.ToString("yyyy-MM-dd HH:mm:ss") + "')";
             Consulta.conexion.Insert(consulta);
-            
+
             consulta = "SELECT idProducto, Name, SKU, GTIN FROM Producto";
 
             dataGridView1.Rows.Clear();

@@ -16,6 +16,7 @@ namespace MiniPlytix
         private string nombre;
         private int SKU;
         private int GTIN;
+        private DateTime FechaCreacion;
 
         public detallesProducto(int idProducto)
         {
@@ -25,17 +26,20 @@ namespace MiniPlytix
 
         private void detallesProducto_Load(object sender, EventArgs e)
         {
-            String consulta = "SELECT Name, SKU, GTIN FROM Producto WHERE idProducto = " + productoId;
+            String consulta = "SELECT Name, SKU, GTIN, FechaCreacion, FechaModificacion FROM Producto WHERE idProducto = " + productoId;
 
             List<object[]> listaConsulta = new Consulta().Select(consulta);
 
             nombre = listaConsulta[0][0].ToString();
             SKU = Convert.ToInt32(listaConsulta[0][1]);
             GTIN = Convert.ToInt32(listaConsulta[0][2]);
+            FechaCreacion = (DateTime)listaConsulta[0][3];
 
             Namelabel.Text = listaConsulta[0][0].ToString();
             SKUlabel.Text = listaConsulta[0][1].ToString();
             GTINlabel.Text = listaConsulta[0][2].ToString();
+            FechaCreacionlabel.Text = listaConsulta[0][3].ToString();
+            FechaModificacionLabel.Text = listaConsulta[0][4].ToString();
 
             String consulta2 = "SELECT Atributo.Name, ValorAtributo.valor FROM Atributo JOIN ValorAtributo ON Atributo.idAtributo = ValorAtributo.idAtributo WHERE ValorAtributo.idProducto = " + productoId;
             List<object[]> listaConsulta2 = new Consulta().Select(consulta2);
@@ -78,11 +82,14 @@ namespace MiniPlytix
         {
             menuProducto editarProducto = new menuProducto(productoId, nombre, SKU, GTIN);
             editarProducto.ShowDialog();
-            Consulta.conexion.Update("UPDATE Producto SET Name= '" + editarProducto.getName() + "', SKU= " + editarProducto.getSKU() + ", GTIN= " + editarProducto.getGTIN() + " WHERE idProducto=" + productoId);
+
+            DateTime fechaModificacion = DateTime.Now;
+            Consulta.conexion.Update("UPDATE Producto SET Name= '" + editarProducto.getName() + "', SKU= " + editarProducto.getSKU() + ", GTIN= " + editarProducto.getGTIN() + ", FechaModificacion='" + fechaModificacion.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE idProducto=" + productoId);
             
             Namelabel.Text = editarProducto.getName();
             SKUlabel.Text = editarProducto.getSKU().ToString();
             GTINlabel.Text = editarProducto.getGTIN().ToString();
+            FechaModificacionLabel.Text = fechaModificacion.ToString();
         }
     }
 }

@@ -46,6 +46,10 @@
             value4 = new Label();
             userAttribute5 = new Label();
             value5 = new Label();
+            label6 = new Label();
+            label4 = new Label();
+            FechaCreacionlabel = new Label();
+            FechaModificacionLabel = new Label();
             SuspendLayout();
             // 
             // label1
@@ -217,10 +221,50 @@
             value5.Size = new Size(0, 21);
             value5.TabIndex = 17;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(43, 317);
+            label6.Name = "label6";
+            label6.Size = new Size(81, 15);
+            label6.TabIndex = 18;
+            label6.Text = "Creation date:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(22, 351);
+            label4.Name = "label4";
+            label4.Size = new Size(102, 15);
+            label4.TabIndex = 19;
+            label4.Text = "Last modification:";
+            // 
+            // FechaCreacionlabel
+            // 
+            FechaCreacionlabel.AutoSize = true;
+            FechaCreacionlabel.Location = new Point(141, 317);
+            FechaCreacionlabel.Name = "FechaCreacionlabel";
+            FechaCreacionlabel.Size = new Size(38, 15);
+            FechaCreacionlabel.TabIndex = 20;
+            FechaCreacionlabel.Text = "label6";
+            // 
+            // FechaModificacionLabel
+            // 
+            FechaModificacionLabel.AutoSize = true;
+            FechaModificacionLabel.Location = new Point(141, 351);
+            FechaModificacionLabel.Name = "FechaModificacionLabel";
+            FechaModificacionLabel.Size = new Size(38, 15);
+            FechaModificacionLabel.TabIndex = 21;
+            FechaModificacionLabel.Text = "label3";
+            // 
             // detallesProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(FechaModificacionLabel);
+            Controls.Add(FechaCreacionlabel);
+            Controls.Add(label4);
+            Controls.Add(label6);
             Controls.Add(value5);
             Controls.Add(userAttribute5);
             Controls.Add(value4);
@@ -266,5 +310,9 @@
         private Label value4;
         private Label userAttribute5;
         private Label value5;
+        private Label label6;
+        private Label label4;
+        private Label FechaCreacionlabel;
+        private Label FechaModificacionLabel;
     }
 }
