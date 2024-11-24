@@ -42,15 +42,16 @@
             NameColumn = new DataGridViewTextBoxColumn();
             TypeColumn = new DataGridViewTextBoxColumn();
             Value = new DataGridViewTextBoxColumn();
+            Delete = new DataGridViewButtonColumn();
             button2 = new Button();
             textBox1 = new TextBox();
             label5 = new Label();
             label6 = new Label();
             dataGridView2 = new DataGridView();
+            NameColumnCategorie = new DataGridViewTextBoxColumn();
             label7 = new Label();
             comboBox2 = new ComboBox();
             button3 = new Button();
-            NameColumnCategorie = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -137,11 +138,12 @@
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idAtributo, NameColumn, TypeColumn, Value });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idAtributo, NameColumn, TypeColumn, Value, Delete });
             dataGridView1.Location = new Point(329, 69);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(253, 146);
             dataGridView1.TabIndex = 8;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // idAtributo
             // 
@@ -162,6 +164,11 @@
             // 
             Value.HeaderText = "Value";
             Value.Name = "Value";
+            // 
+            // Delete
+            // 
+            Delete.HeaderText = "Delete";
+            Delete.Name = "Delete";
             // 
             // button2
             // 
@@ -209,6 +216,11 @@
             dataGridView2.Size = new Size(176, 150);
             dataGridView2.TabIndex = 13;
             // 
+            // NameColumnCategorie
+            // 
+            NameColumnCategorie.HeaderText = "Name";
+            NameColumnCategorie.Name = "NameColumnCategorie";
+            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -235,11 +247,6 @@
             button3.Text = "Add categorie";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
-            // 
-            // NameColumnCategorie
-            // 
-            NameColumnCategorie.HeaderText = "Name";
-            NameColumnCategorie.Name = "NameColumnCategorie";
             // 
             // menuProducto
             // 
@@ -289,15 +296,16 @@
         private TextBox textBox1;
         private Label label5;
         private Label label6;
-        private DataGridViewTextBoxColumn idAtributo;
-        private DataGridViewTextBoxColumn NameColumn;
-        private DataGridViewTextBoxColumn TypeColumn;
-        private DataGridViewTextBoxColumn Value;
         private DataGridView dataGridView2;
         private Label label7;
         private ComboBox comboBox2;
         private Button button3;
         private DataGridViewTextBoxColumn NameColumnCategorie;
+        private DataGridViewTextBoxColumn idAtributo;
+        private DataGridViewTextBoxColumn NameColumn;
+        private DataGridViewTextBoxColumn TypeColumn;
+        private DataGridViewTextBoxColumn Value;
+        private DataGridViewButtonColumn Delete;
     }
 
 }

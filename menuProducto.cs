@@ -156,13 +156,13 @@ namespace MiniPlytix
         //Guardar categoria
         private void button3_Click(object sender, EventArgs e)
         {
-            if(comboBox2.SelectedIndex == -1)
+            if (comboBox2.SelectedIndex == -1)
             {
                 MessageBox.Show("Select a category");
                 return;
             }
             string categoria = comboBox2.SelectedItem.ToString();
-            
+
             string consulta = $"SELECT idCategoria FROM Categoria WHERE Categoria.Name = '{categoria}'";
             List<object[]> listaConsulta = new Consulta().Select(consulta);
             int idCategoria = Convert.ToInt32(listaConsulta[0][0]);
@@ -171,6 +171,23 @@ namespace MiniPlytix
 
             LoadDataGridViewCategories();
             LoadComboBoxCategories();
+        }
+
+
+        //Eliminar atributo
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //TODO: Funciona el metodo en la base de datos correctamente pero lanza un error
+
+            /*
+            if(e.ColumnIndex == 4)
+            {
+                int idAtributo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                Consulta.conexion.Delete($"DELETE FROM ValorAtributo WHERE idProducto = {idProducto} AND idAtributo = {idAtributo}");
+                LoadDataGridViewAttributes();
+                LoadComboBoxAttributes();
+            }
+            */
         }
     }
 }
