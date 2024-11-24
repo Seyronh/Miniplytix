@@ -18,10 +18,13 @@ namespace MiniPlytix
         public menuAtributo()
         {
             InitializeComponent();
+            this.Text = "Create Attribute";
         }
         public menuAtributo(string nombre, int idTipo)
         {
             InitializeComponent();
+            this.Text = "Edit Attribute";
+
             Nombreactual = nombre;
             selected = idTipo-1;
         }

@@ -15,6 +15,7 @@ namespace MiniPlytix
         public FormularoPrincipal()
         {
             InitializeComponent();
+            this.Text = "MiniPlytix";
         }
 
         private void MostrarControlDeUsuario(UserControl control)

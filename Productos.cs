@@ -56,8 +56,9 @@ namespace MiniPlytix
 
         private void button1_Click(object sender, EventArgs e)
         {
-            menuCrearProducto crear = new menuCrearProducto();
+            menuProducto crear = new menuProducto();
             crear.ShowDialog();
+            if (crear.getName().Length == 0 || crear.getSKU() == 0 || crear.getGTIN() == 0) return;
             String consulta = "INSERT INTO Producto (Name, GTIN, SKU) VALUES ('" + crear.getName() + "', " + crear.getGTIN() + "," + crear.getSKU() + " )";
             Consulta.conexion.Insert(consulta);
             

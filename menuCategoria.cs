@@ -16,10 +16,13 @@ namespace MiniPlytix
         public menuCategoria()
         {
             InitializeComponent();
+            this.Text = "Create Category";
         }
         public menuCategoria(string nombre)
         {
             InitializeComponent();
+            this.Text = "Edit Category";
+
             textBox1.Text = nombre;
             nuevonombre = nombre;
         }

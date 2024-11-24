@@ -38,7 +38,7 @@ namespace MiniPlytix
         }
         private void actualizarDisponibles()
         {
-            label2.Text = "Atributos disponibles: " + (MAXATRIBUTOS - ContadorAtributos);
+            label2.Text = "Available attributes: " + (MAXATRIBUTOS - ContadorAtributos);
         }
 
         private void button1_Click(object sender, EventArgs e)

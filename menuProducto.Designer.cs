@@ -1,6 +1,6 @@
 ﻿namespace MiniPlytix
 {
-    partial class menuEditarProducto
+    partial class menuProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -95,7 +95,7 @@
             GTINTextBox.Size = new Size(212, 23);
             GTINTextBox.TabIndex = 5;
             // 
-            // menuEditarProducto
+            // menuCrearProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -107,8 +107,8 @@
             Controls.Add(NameTextBox);
             Controls.Add(label1);
             Controls.Add(button1);
-            Name = "menuEditarProducto";
-            Text = "menuEditarProducto";
+            Name = "menuCrearProducto";
+            Text = "menuCrearProducto";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,4 +123,5 @@
         private Label label3;
         private TextBox GTINTextBox;
     }
+
 }
