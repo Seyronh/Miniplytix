@@ -36,6 +36,22 @@ namespace MiniPlytix
             Namelabel.Text = listaConsulta[0][0].ToString();
             SKUlabel.Text = listaConsulta[0][1].ToString();
             GTINlabel.Text = listaConsulta[0][2].ToString();
+
+            String consulta2 = "SELECT Atributo.Name, ValorAtributo.valor FROM Atributo JOIN ValorAtributo ON Atributo.idAtributo = ValorAtributo.idAtributo WHERE ValorAtributo.idProducto = " + productoId;
+            List<object[]> listaConsulta2 = new Consulta().Select(consulta2);
+
+            for (int i = 0; i < listaConsulta2.Count; i++)
+            {
+                var attributeLabel = this.Controls.Find("userAttribute" + (i + 1), true).FirstOrDefault() as Label;
+                var valueLabel = this.Controls.Find("value" + (i + 1), true).FirstOrDefault() as Label;
+
+                if (attributeLabel != null && valueLabel != null)
+                {
+                    attributeLabel.Text = listaConsulta2[i][0].ToString() + ":";
+                    valueLabel.Text = listaConsulta2[i][1].ToString();
+                }
+            }
+
         }
 
 
@@ -63,7 +79,7 @@ namespace MiniPlytix
             menuProducto editarProducto = new menuProducto(productoId, nombre, SKU, GTIN);
             editarProducto.ShowDialog();
             Consulta.conexion.Update("UPDATE Producto SET Name= '" + editarProducto.getName() + "', SKU= " + editarProducto.getSKU() + ", GTIN= " + editarProducto.getGTIN() + " WHERE idProducto=" + productoId);
-
+            
             Namelabel.Text = editarProducto.getName();
             SKUlabel.Text = editarProducto.getSKU().ToString();
             GTINlabel.Text = editarProducto.getGTIN().ToString();

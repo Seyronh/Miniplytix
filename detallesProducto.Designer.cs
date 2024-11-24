@@ -36,6 +36,16 @@
             Namelabel = new Label();
             ButtonDelete = new Button();
             ButtonEdit = new Button();
+            userAttribute1 = new Label();
+            userAttribute2 = new Label();
+            userAttribute3 = new Label();
+            value1 = new Label();
+            value2 = new Label();
+            value3 = new Label();
+            userAttribute4 = new Label();
+            value4 = new Label();
+            userAttribute5 = new Label();
+            value5 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -117,10 +127,110 @@
             ButtonEdit.UseVisualStyleBackColor = true;
             ButtonEdit.Click += button2_Click;
             // 
+            // userAttribute1
+            // 
+            userAttribute1.AutoSize = true;
+            userAttribute1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            userAttribute1.Location = new Point(222, 116);
+            userAttribute1.Name = "userAttribute1";
+            userAttribute1.Size = new Size(0, 21);
+            userAttribute1.TabIndex = 8;
+            // 
+            // userAttribute2
+            // 
+            userAttribute2.AutoSize = true;
+            userAttribute2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            userAttribute2.Location = new Point(222, 152);
+            userAttribute2.Name = "userAttribute2";
+            userAttribute2.Size = new Size(0, 21);
+            userAttribute2.TabIndex = 9;
+            // 
+            // userAttribute3
+            // 
+            userAttribute3.AutoSize = true;
+            userAttribute3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            userAttribute3.Location = new Point(222, 196);
+            userAttribute3.Name = "userAttribute3";
+            userAttribute3.Size = new Size(0, 21);
+            userAttribute3.TabIndex = 10;
+            // 
+            // value1
+            // 
+            value1.AutoSize = true;
+            value1.Font = new Font("Segoe UI", 12F);
+            value1.Location = new Point(361, 116);
+            value1.Name = "value1";
+            value1.Size = new Size(0, 21);
+            value1.TabIndex = 11;
+            // 
+            // value2
+            // 
+            value2.AutoSize = true;
+            value2.Font = new Font("Segoe UI", 12F);
+            value2.Location = new Point(361, 152);
+            value2.Name = "value2";
+            value2.Size = new Size(0, 21);
+            value2.TabIndex = 12;
+            // 
+            // value3
+            // 
+            value3.AutoSize = true;
+            value3.Font = new Font("Segoe UI", 12F);
+            value3.Location = new Point(361, 196);
+            value3.Name = "value3";
+            value3.Size = new Size(0, 21);
+            value3.TabIndex = 13;
+            // 
+            // userAttribute4
+            // 
+            userAttribute4.AutoSize = true;
+            userAttribute4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            userAttribute4.Location = new Point(222, 231);
+            userAttribute4.Name = "userAttribute4";
+            userAttribute4.Size = new Size(0, 21);
+            userAttribute4.TabIndex = 14;
+            // 
+            // value4
+            // 
+            value4.AutoSize = true;
+            value4.Font = new Font("Segoe UI", 12F);
+            value4.Location = new Point(359, 229);
+            value4.Name = "value4";
+            value4.Size = new Size(0, 21);
+            value4.TabIndex = 15;
+            // 
+            // userAttribute5
+            // 
+            userAttribute5.AutoSize = true;
+            userAttribute5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            userAttribute5.Location = new Point(222, 271);
+            userAttribute5.Name = "userAttribute5";
+            userAttribute5.Size = new Size(0, 21);
+            userAttribute5.TabIndex = 16;
+            // 
+            // value5
+            // 
+            value5.AutoSize = true;
+            value5.Font = new Font("Segoe UI", 12F);
+            value5.Location = new Point(359, 271);
+            value5.Name = "value5";
+            value5.Size = new Size(0, 21);
+            value5.TabIndex = 17;
+            // 
             // detallesProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(value5);
+            Controls.Add(userAttribute5);
+            Controls.Add(value4);
+            Controls.Add(userAttribute4);
+            Controls.Add(value3);
+            Controls.Add(value2);
+            Controls.Add(value1);
+            Controls.Add(userAttribute3);
+            Controls.Add(userAttribute2);
+            Controls.Add(userAttribute1);
             Controls.Add(ButtonEdit);
             Controls.Add(ButtonDelete);
             Controls.Add(Namelabel);
@@ -146,5 +256,15 @@
         private Label Namelabel;
         private Button ButtonDelete;
         private Button ButtonEdit;
+        private Label userAttribute1;
+        private Label userAttribute2;
+        private Label userAttribute3;
+        private Label value1;
+        private Label value2;
+        private Label value3;
+        private Label userAttribute4;
+        private Label value4;
+        private Label userAttribute5;
+        private Label value5;
     }
 }

@@ -38,17 +38,26 @@
             comboBox1 = new ComboBox();
             label4 = new Label();
             dataGridView1 = new DataGridView();
-            button2 = new Button();
             idAtributo = new DataGridViewTextBoxColumn();
             NameColumn = new DataGridViewTextBoxColumn();
             TypeColumn = new DataGridViewTextBoxColumn();
-            Delete = new DataGridViewButtonColumn();
+            Value = new DataGridViewTextBoxColumn();
+            button2 = new Button();
+            textBox1 = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
+            dataGridView2 = new DataGridView();
+            label7 = new Label();
+            comboBox2 = new ComboBox();
+            button3 = new Button();
+            NameColumnCategorie = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(103, 304);
+            button1.Location = new Point(104, 314);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 3;
@@ -107,9 +116,9 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(329, 247);
+            comboBox1.Location = new Point(329, 257);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(164, 23);
+            comboBox1.Size = new Size(127, 23);
             comboBox1.TabIndex = 6;
             // 
             // label4
@@ -123,24 +132,16 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idAtributo, NameColumn, TypeColumn, Delete });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idAtributo, NameColumn, TypeColumn, Value });
             dataGridView1.Location = new Point(329, 69);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(253, 146);
             dataGridView1.TabIndex = 8;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(507, 246);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 9;
-            button2.Text = "Add";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // idAtributo
             // 
@@ -157,16 +158,101 @@
             TypeColumn.HeaderText = "Type";
             TypeColumn.Name = "TypeColumn";
             // 
-            // Delete
+            // Value
             // 
-            Delete.HeaderText = "Delete";
-            Delete.Name = "Delete";
+            Value.HeaderText = "Value";
+            Value.Name = "Value";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(489, 313);
+            button2.Name = "button2";
+            button2.Size = new Size(93, 23);
+            button2.TabIndex = 9;
+            button2.Text = "Add attribute";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(329, 314);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(127, 23);
+            textBox1.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(329, 239);
+            label5.Name = "label5";
+            label5.Size = new Size(104, 15);
+            label5.TabIndex = 11;
+            label5.Text = "New user attribute";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(329, 296);
+            label6.Name = "label6";
+            label6.Size = new Size(35, 15);
+            label6.TabIndex = 12;
+            label6.Text = "Value";
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { NameColumnCategorie });
+            dataGridView2.Location = new Point(685, 69);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(176, 150);
+            dataGridView2.TabIndex = 13;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(685, 51);
+            label7.Name = "label7";
+            label7.Size = new Size(63, 15);
+            label7.TabIndex = 14;
+            label7.Text = "Categories";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(685, 257);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(176, 23);
+            comboBox2.TabIndex = 15;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(731, 313);
+            button3.Name = "button3";
+            button3.Size = new Size(92, 23);
+            button3.TabIndex = 16;
+            button3.Text = "Add categorie";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // NameColumnCategorie
+            // 
+            NameColumnCategorie.HeaderText = "Name";
+            NameColumnCategorie.Name = "NameColumnCategorie";
             // 
             // menuProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(729, 393);
+            ClientSize = new Size(952, 393);
+            Controls.Add(button3);
+            Controls.Add(comboBox2);
+            Controls.Add(label7);
+            Controls.Add(dataGridView2);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(textBox1);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(label4);
@@ -182,6 +268,7 @@
             Text = "menuCrearProducto";
             Load += menuProducto_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -199,10 +286,18 @@
         private Label label4;
         private DataGridView dataGridView1;
         private Button button2;
+        private TextBox textBox1;
+        private Label label5;
+        private Label label6;
         private DataGridViewTextBoxColumn idAtributo;
         private DataGridViewTextBoxColumn NameColumn;
         private DataGridViewTextBoxColumn TypeColumn;
-        private DataGridViewButtonColumn Delete;
+        private DataGridViewTextBoxColumn Value;
+        private DataGridView dataGridView2;
+        private Label label7;
+        private ComboBox comboBox2;
+        private Button button3;
+        private DataGridViewTextBoxColumn NameColumnCategorie;
     }
 
 }
