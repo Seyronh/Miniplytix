@@ -62,7 +62,7 @@ namespace MiniPlytix
 
             DateTime fechaActual = DateTime.Now;
 
-            String consulta = "INSERT INTO Producto (Name, GTIN, SKU, FechaCreacion, FechaModificacion) VALUES ('" + crear.getName() + "', " + crear.getGTIN() + "," + crear.getSKU() + ",'" + fechaActual.ToString("yyyy-MM-dd HH:mm:ss") + "," + fechaActual.ToString("yyyy-MM-dd HH:mm:ss") + "')";
+            String consulta = "INSERT INTO Producto (Name, GTIN, SKU, FechaCreacion, FechaModificacion) VALUES ('" + crear.getName() + "', " + crear.getGTIN() + "," + crear.getSKU() + ",'" + fechaActual.ToString("yyyy-MM-dd HH:mm:ss") + "','" + fechaActual.ToString("yyyy-MM-dd HH:mm:ss") + "')";
             Consulta.conexion.Insert(consulta);
 
             consulta = "SELECT idProducto, Name, SKU, GTIN FROM Producto";

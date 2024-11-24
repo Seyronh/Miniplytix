@@ -52,13 +52,17 @@
             label7 = new Label();
             comboBox2 = new ComboBox();
             button3 = new Button();
+            pictureBox1 = new PictureBox();
+            openFileDialog1 = new OpenFileDialog();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(104, 314);
+            button1.Location = new Point(103, 396);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 3;
@@ -69,7 +73,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(36, 69);
+            label1.Location = new Point(36, 198);
             label1.Name = "label1";
             label1.Size = new Size(39, 15);
             label1.TabIndex = 4;
@@ -77,15 +81,15 @@
             // 
             // NameTextBox
             // 
-            NameTextBox.Location = new Point(36, 87);
+            NameTextBox.Location = new Point(36, 216);
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(212, 23);
+            NameTextBox.Size = new Size(230, 23);
             NameTextBox.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(36, 151);
+            label2.Location = new Point(36, 260);
             label2.Name = "label2";
             label2.Size = new Size(28, 15);
             label2.TabIndex = 4;
@@ -93,15 +97,15 @@
             // 
             // SKUTextBox
             // 
-            SKUTextBox.Location = new Point(36, 169);
+            SKUTextBox.Location = new Point(36, 278);
             SKUTextBox.Name = "SKUTextBox";
-            SKUTextBox.Size = new Size(212, 23);
+            SKUTextBox.Size = new Size(230, 23);
             SKUTextBox.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(36, 229);
+            label3.Location = new Point(36, 327);
             label3.Name = "label3";
             label3.Size = new Size(33, 15);
             label3.TabIndex = 4;
@@ -109,9 +113,9 @@
             // 
             // GTINTextBox
             // 
-            GTINTextBox.Location = new Point(36, 247);
+            GTINTextBox.Location = new Point(36, 345);
             GTINTextBox.Name = "GTINTextBox";
-            GTINTextBox.Size = new Size(212, 23);
+            GTINTextBox.Size = new Size(230, 23);
             GTINTextBox.TabIndex = 5;
             // 
             // comboBox1
@@ -248,11 +252,35 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(36, 31);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(140, 140);
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // button4
+            // 
+            button4.Location = new Point(182, 148);
+            button4.Name = "button4";
+            button4.Size = new Size(84, 23);
+            button4.TabIndex = 18;
+            button4.Text = "Select image";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // menuProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(952, 393);
+            ClientSize = new Size(952, 452);
+            Controls.Add(button4);
+            Controls.Add(pictureBox1);
             Controls.Add(button3);
             Controls.Add(comboBox2);
             Controls.Add(label7);
@@ -276,6 +304,7 @@
             Load += menuProducto_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -306,6 +335,9 @@
         private DataGridViewTextBoxColumn TypeColumn;
         private DataGridViewTextBoxColumn Value;
         private DataGridViewButtonColumn Delete;
+        private PictureBox pictureBox1;
+        private OpenFileDialog openFileDialog1;
+        private Button button4;
     }
 
 }

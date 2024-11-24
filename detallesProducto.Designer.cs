@@ -50,6 +50,8 @@
             label4 = new Label();
             FechaCreacionlabel = new Label();
             FechaModificacionLabel = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -257,10 +259,19 @@
             FechaModificacionLabel.TabIndex = 21;
             FechaModificacionLabel.Text = "label3";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(39, 24);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(140, 140);
+            pictureBox1.TabIndex = 22;
+            pictureBox1.TabStop = false;
+            // 
             // detallesProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pictureBox1);
             Controls.Add(FechaModificacionLabel);
             Controls.Add(FechaCreacionlabel);
             Controls.Add(label4);
@@ -286,6 +297,7 @@
             Name = "detallesProducto";
             Size = new Size(793, 409);
             Load += detallesProducto_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -314,5 +326,6 @@
         private Label label4;
         private Label FechaCreacionlabel;
         private Label FechaModificacionLabel;
+        private PictureBox pictureBox1;
     }
 }

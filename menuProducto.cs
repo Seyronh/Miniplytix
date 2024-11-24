@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MiniPlytix
@@ -189,5 +190,37 @@ namespace MiniPlytix
             }
             */
         }
+
+
+        //Seleccionar imagen y guardarla en la base de datos
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Mostrar el cuadro de diálogo para seleccionar una imagen
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Cargar la imagen seleccionada en el PictureBox
+                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+
+                // Convertir la imagen a un array de bytes
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                    byte[] img = ms.ToArray();
+
+                    // Convertir el array de bytes a una cadena hexadecimal
+                    string imgHex = BitConverter.ToString(img).Replace("-", "");
+
+                    // Construir la consulta SQL directamente con el valor hexadecimal
+                    string query = $"UPDATE Producto SET Imagen = 0x{imgHex} WHERE idProducto = {idProducto}";
+
+                    // Ejecutar la consulta
+                    Consulta.conexion.Update(query);
+                }
+            }
+        }
+
+
+
+
     }
 }

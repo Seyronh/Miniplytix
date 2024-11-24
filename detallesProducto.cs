@@ -26,6 +26,11 @@ namespace MiniPlytix
 
         private void detallesProducto_Load(object sender, EventArgs e)
         {
+            loadProductDetails();
+        }
+
+        private void loadProductDetails()
+        {
             String consulta = "SELECT Name, SKU, GTIN, FechaCreacion, FechaModificacion FROM Producto WHERE idProducto = " + productoId;
 
             List<object[]> listaConsulta = new Consulta().Select(consulta);
@@ -56,6 +61,18 @@ namespace MiniPlytix
                 }
             }
 
+
+            string query = $"SELECT imagen FROM Producto WHERE idProducto = {productoId}";
+            List<object[]> listaConsulta3 = new Consulta().Select(query);
+            if (listaConsulta3[0][0] == DBNull.Value)
+            {
+                return;
+            }
+            else
+            {
+                byte[] img = (byte[])listaConsulta3[0][0];
+                pictureBox1.Image = Image.FromStream(new System.IO.MemoryStream(img));
+            }
         }
 
 
@@ -86,10 +103,7 @@ namespace MiniPlytix
             DateTime fechaModificacion = DateTime.Now;
             Consulta.conexion.Update("UPDATE Producto SET Name= '" + editarProducto.getName() + "', SKU= " + editarProducto.getSKU() + ", GTIN= " + editarProducto.getGTIN() + ", FechaModificacion='" + fechaModificacion.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE idProducto=" + productoId);
             
-            Namelabel.Text = editarProducto.getName();
-            SKUlabel.Text = editarProducto.getSKU().ToString();
-            GTINlabel.Text = editarProducto.getGTIN().ToString();
-            FechaModificacionLabel.Text = fechaModificacion.ToString();
+            loadProductDetails();
         }
     }
 }
